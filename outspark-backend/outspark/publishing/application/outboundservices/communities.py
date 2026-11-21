@@ -1,0 +1,6 @@
+from typing import Protocol
+
+
+class CommunityPermits(Protocol):
+    def topics(self, topics: list[str]) -> tuple: ...
+    def permit(self, actor: str, community: str, topics: list[str]) -> tuple: ...

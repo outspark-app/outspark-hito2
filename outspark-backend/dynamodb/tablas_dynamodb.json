@@ -1,0 +1,210 @@
+{
+  "profiles": {
+    "TableName": "Outspark-dev-profiles",
+    "BillingMode": "PAY_PER_REQUEST",
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "PK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "SK",
+        "AttributeType": "S"
+      }
+    ],
+    "KeySchema": [
+      {
+        "AttributeName": "PK",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "SK",
+        "KeyType": "RANGE"
+      }
+    ]
+  },
+  "connections": {
+    "TableName": "Outspark-dev-connections",
+    "BillingMode": "PAY_PER_REQUEST",
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "PK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "SK",
+        "AttributeType": "S"
+      }
+    ],
+    "KeySchema": [
+      {
+        "AttributeName": "PK",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "SK",
+        "KeyType": "RANGE"
+      }
+    ]
+  },
+  "communities": {
+    "TableName": "Outspark-dev-communities",
+    "BillingMode": "PAY_PER_REQUEST",
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "PK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "SK",
+        "AttributeType": "S"
+      }
+    ],
+    "KeySchema": [
+      {
+        "AttributeName": "PK",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "SK",
+        "KeyType": "RANGE"
+      }
+    ]
+  },
+  "publishing": {
+    "TableName": "Outspark-dev-publishing",
+    "BillingMode": "PAY_PER_REQUEST",
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "PK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "SK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "GSI1PK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "GSI1SK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "GSI2PK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "GSI2SK",
+        "AttributeType": "S"
+      }
+    ],
+    "KeySchema": [
+      {
+        "AttributeName": "PK",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "SK",
+        "KeyType": "RANGE"
+      }
+    ],
+    "GlobalSecondaryIndexes": [
+      {
+        "IndexName": "ActivityByActor",
+        "KeySchema": [
+          {
+            "AttributeName": "GSI1PK",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "GSI1SK",
+            "KeyType": "RANGE"
+          }
+        ],
+        "Projection": {
+          "ProjectionType": "INCLUDE",
+          "NonKeyAttributes": [
+            "entity_type",
+            "publication_id",
+            "event_id",
+            "actor_id",
+            "parent_event_id",
+            "created_at"
+          ]
+        }
+      },
+      {
+        "IndexName": "PublicationsByCommunity",
+        "KeySchema": [
+          {
+            "AttributeName": "GSI2PK",
+            "KeyType": "HASH"
+          },
+          {
+            "AttributeName": "GSI2SK",
+            "KeyType": "RANGE"
+          }
+        ],
+        "Projection": {
+          "ProjectionType": "INCLUDE",
+          "NonKeyAttributes": [
+            "entity_type",
+            "publication_id",
+            "author_id",
+            "created_at"
+          ]
+        }
+      }
+    ]
+  },
+  "discovery": {
+    "TableName": "Outspark-dev-discovery",
+    "BillingMode": "PAY_PER_REQUEST",
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "PK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "SK",
+        "AttributeType": "S"
+      }
+    ],
+    "KeySchema": [
+      {
+        "AttributeName": "PK",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "SK",
+        "KeyType": "RANGE"
+      }
+    ]
+  },
+  "network_analysis": {
+    "TableName": "Outspark-dev-network-analysis",
+    "BillingMode": "PAY_PER_REQUEST",
+    "AttributeDefinitions": [
+      {
+        "AttributeName": "PK",
+        "AttributeType": "S"
+      },
+      {
+        "AttributeName": "SK",
+        "AttributeType": "S"
+      }
+    ],
+    "KeySchema": [
+      {
+        "AttributeName": "PK",
+        "KeyType": "HASH"
+      },
+      {
+        "AttributeName": "SK",
+        "KeyType": "RANGE"
+      }
+    ]
+  }
+}

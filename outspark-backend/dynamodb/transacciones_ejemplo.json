@@ -1,0 +1,684 @@
+{
+  "publicar": {
+    "resultado": {
+      "publication_id": "8fc14227-89f1-43a4-9915-5b6e44fbb813",
+      "event_id": "8fc14227-89f1-43a4-9915-5b6e44fbb813/ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+    },
+    "TransactItems": [
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "USER#ana"
+            },
+            "SK": {
+              "S": "PROFILE"
+            }
+          },
+          "ConditionExpression": "attribute_exists(PK) AND #state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "COMM#diseno"
+            },
+            "SK": {
+              "S": "META"
+            }
+          },
+          "ConditionExpression": "#state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "USER#ana"
+            },
+            "SK": {
+              "S": "MEMBER#diseno"
+            }
+          },
+          "ConditionExpression": "#state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "CATALOG#TOPIC"
+            },
+            "SK": {
+              "S": "TOPIC#diseno"
+            }
+          },
+          "ConditionExpression": "attribute_exists(PK)"
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "POST#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "SK": {
+              "S": "META"
+            },
+            "entity_type": {
+              "S": "PUBLICATION"
+            },
+            "publication_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "author_id": {
+              "S": "ana"
+            },
+            "community_id": {
+              "S": "diseno"
+            },
+            "body": {
+              "S": "Una idea conecta comunidades."
+            },
+            "topic_ids": {
+              "L": [
+                {
+                  "S": "diseno"
+                }
+              ]
+            },
+            "visibility": {
+              "S": "public"
+            },
+            "status": {
+              "S": "ACTIVE"
+            },
+            "root_event_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+            },
+            "created_at": {
+              "S": "2026-10-12T15:00:00.000Z"
+            },
+            "GSI2PK": {
+              "S": "COMM#diseno"
+            },
+            "GSI2SK": {
+              "S": "2026-10-12T15:00:00.000Z#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "POST#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "SK": {
+              "S": "EVENT#ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+            },
+            "entity_type": {
+              "S": "EVENT"
+            },
+            "publication_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "actor_id": {
+              "S": "ana"
+            },
+            "parent_event_id": {
+              "NULL": true
+            },
+            "event_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+            },
+            "created_at": {
+              "S": "2026-10-12T15:00:00.000Z"
+            },
+            "GSI1PK": {
+              "S": "ACTOR#ana"
+            },
+            "GSI1SK": {
+              "S": "2026-10-12T15:00:00.000Z#8fc14227-89f1-43a4-9915-5b6e44fbb813/ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "POST#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "SK": {
+              "S": "ACTOR#ana"
+            },
+            "entity_type": {
+              "S": "PARTICIPATION"
+            },
+            "event_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "USER#ana"
+            },
+            "SK": {
+              "S": "REQUEST#e6537ffc30aa789aaa2ff3671b9eb2bea7604e0bc8df187e10973d5a36efac4f"
+            },
+            "entity_type": {
+              "S": "REQUEST"
+            },
+            "payload_hash": {
+              "S": "e450cf2775bc051e45ddbb78e812c27ba1b6ae9deb1bdee5cb6d8ba6fc1fc235"
+            },
+            "result": {
+              "M": {
+                "publication_id": {
+                  "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813"
+                },
+                "event_id": {
+                  "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+                }
+              }
+            },
+            "created_at": {
+              "S": "2026-10-12T15:00:00.000Z"
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      }
+    ]
+  },
+  "republicar": {
+    "resultado": {
+      "publication_id": "8fc14227-89f1-43a4-9915-5b6e44fbb813",
+      "event_id": "8fc14227-89f1-43a4-9915-5b6e44fbb813/545d3ab0-62d0-4f59-bebd-b69e8adec137"
+    },
+    "TransactItems": [
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "USER#bruno"
+            },
+            "SK": {
+              "S": "PROFILE"
+            }
+          },
+          "ConditionExpression": "attribute_exists(PK) AND #state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "POST#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "SK": {
+              "S": "META"
+            }
+          },
+          "ConditionExpression": "#state = :active AND visibility = :public",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            },
+            ":public": {
+              "S": "public"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "POST#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "SK": {
+              "S": "EVENT#ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+            }
+          },
+          "ConditionExpression": "publication_id = :post AND event_id = :parent",
+          "ExpressionAttributeValues": {
+            ":post": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            ":parent": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+            }
+          }
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "POST#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "SK": {
+              "S": "EVENT#545d3ab0-62d0-4f59-bebd-b69e8adec137"
+            },
+            "entity_type": {
+              "S": "EVENT"
+            },
+            "publication_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "actor_id": {
+              "S": "bruno"
+            },
+            "parent_event_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/ad91e48e-cb6b-401e-a9e5-332fa1c43355"
+            },
+            "event_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/545d3ab0-62d0-4f59-bebd-b69e8adec137"
+            },
+            "created_at": {
+              "S": "2026-10-12T15:00:00.000Z"
+            },
+            "GSI1PK": {
+              "S": "ACTOR#bruno"
+            },
+            "GSI1SK": {
+              "S": "2026-10-12T15:00:00.000Z#8fc14227-89f1-43a4-9915-5b6e44fbb813/545d3ab0-62d0-4f59-bebd-b69e8adec137"
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "POST#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "SK": {
+              "S": "ACTOR#bruno"
+            },
+            "entity_type": {
+              "S": "PARTICIPATION"
+            },
+            "event_id": {
+              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/545d3ab0-62d0-4f59-bebd-b69e8adec137"
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "USER#bruno"
+            },
+            "SK": {
+              "S": "REQUEST#4d0846ed6eef60e0ed16bbe4fb8a8cc949f9264ca0c087b9f238391175c55713"
+            },
+            "entity_type": {
+              "S": "REQUEST"
+            },
+            "payload_hash": {
+              "S": "518e23444b46e7c669f159fe0c0afb0861179d63af135561e6a6ae892652dce5"
+            },
+            "result": {
+              "M": {
+                "publication_id": {
+                  "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813"
+                },
+                "event_id": {
+                  "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/545d3ab0-62d0-4f59-bebd-b69e8adec137"
+                }
+              }
+            },
+            "created_at": {
+              "S": "2026-10-12T15:00:00.000Z"
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      }
+    ]
+  },
+  "snapshot": {
+    "snapshot_id": "f5138cbe-9457-4159-93e9-ffd08b979e1a",
+    "TransactItems": [
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "USER#diego"
+            },
+            "SK": {
+              "S": "PROFILE"
+            }
+          },
+          "ConditionExpression": "attribute_exists(PK) AND #state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "POST#8fc14227-89f1-43a4-9915-5b6e44fbb813"
+            },
+            "SK": {
+              "S": "META"
+            }
+          },
+          "ConditionExpression": "#state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "USER#diego"
+            },
+            "SK": {
+              "S": "CONTACT#bruno"
+            }
+          },
+          "ConditionExpression": "#state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "USER#diego"
+            },
+            "SK": {
+              "S": "MEMBER#diseno"
+            }
+          },
+          "ConditionExpression": "#state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "ConditionCheck": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Key": {
+            "PK": {
+              "S": "USER#diego"
+            },
+            "SK": {
+              "S": "CONTACT#carla"
+            }
+          },
+          "ConditionExpression": "#state = :active",
+          "ExpressionAttributeValues": {
+            ":active": {
+              "S": "ACTIVE"
+            }
+          },
+          "ExpressionAttributeNames": {
+            "#state": "status"
+          }
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "FEED#f5138cbe-9457-4159-93e9-ffd08b979e1a"
+            },
+            "SK": {
+              "S": "META"
+            },
+            "entity_type": {
+              "S": "FEED_SNAPSHOT"
+            },
+            "snapshot_id": {
+              "S": "f5138cbe-9457-4159-93e9-ffd08b979e1a"
+            },
+            "viewer_id": {
+              "S": "diego"
+            },
+            "strategy": {
+              "S": "chronological"
+            },
+            "algorithm_version": {
+              "S": "feed-v1"
+            },
+            "generated_at": {
+              "S": "2026-10-12T15:00:00.000Z"
+            },
+            "cards": {
+              "L": [
+                {
+                  "M": {
+                    "publication_id": {
+                      "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813"
+                    },
+                    "position": {
+                      "N": "0"
+                    },
+                    "sources": {
+                      "L": [
+                        {
+                          "M": {
+                            "event_id": {
+                              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/545d3ab0-62d0-4f59-bebd-b69e8adec137"
+                            },
+                            "reasons": {
+                              "L": [
+                                {
+                                  "M": {
+                                    "type": {
+                                      "S": "contact"
+                                    },
+                                    "contact_id": {
+                                      "S": "bruno"
+                                    },
+                                    "text": {
+                                      "S": "bruno lo republicó."
+                                    }
+                                  }
+                                },
+                                {
+                                  "M": {
+                                    "type": {
+                                      "S": "community"
+                                    },
+                                    "community_id": {
+                                      "S": "diseno"
+                                    },
+                                    "text": {
+                                      "S": "Sigues Diseño."
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        },
+                        {
+                          "M": {
+                            "event_id": {
+                              "S": "8fc14227-89f1-43a4-9915-5b6e44fbb813/409d6ed5-fd4f-443e-8afc-92a9bec0365d"
+                            },
+                            "reasons": {
+                              "L": [
+                                {
+                                  "M": {
+                                    "type": {
+                                      "S": "contact"
+                                    },
+                                    "contact_id": {
+                                      "S": "carla"
+                                    },
+                                    "text": {
+                                      "S": "carla lo republicó."
+                                    }
+                                  }
+                                },
+                                {
+                                  "M": {
+                                    "type": {
+                                      "S": "community"
+                                    },
+                                    "community_id": {
+                                      "S": "diseno"
+                                    },
+                                    "text": {
+                                      "S": "Sigues Diseño."
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            },
+            "source_count": {
+              "N": "2"
+            },
+            "limits": {
+              "M": {
+                "candidates": {
+                  "N": "200"
+                },
+                "cards": {
+                  "N": "10"
+                },
+                "contacts": {
+                  "N": "20"
+                },
+                "communities": {
+                  "N": "10"
+                }
+              }
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      },
+      {
+        "Put": {
+          "TableName": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+          "Item": {
+            "PK": {
+              "S": "USER#diego"
+            },
+            "SK": {
+              "S": "FEED#2026-10-12T15:00:00.000Z#f5138cbe-9457-4159-93e9-ffd08b979e1a"
+            },
+            "entity_type": {
+              "S": "FEED_POINTER"
+            },
+            "snapshot_id": {
+              "S": "f5138cbe-9457-4159-93e9-ffd08b979e1a"
+            },
+            "generated_at": {
+              "S": "2026-10-12T15:00:00.000Z"
+            }
+          },
+          "ConditionExpression": "attribute_not_exists(PK)"
+        }
+      }
+    ]
+  }
+}

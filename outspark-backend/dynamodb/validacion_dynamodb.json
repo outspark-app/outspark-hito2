@@ -1,0 +1,151 @@
+{
+  "fecha_utc": "2026-10-12T20:56:31.060046+00:00",
+  "entorno": "DynamoDB Local / SDK boto3",
+  "boto3_version": "1.42.97",
+  "python_version": "3.12.11",
+  "dynamodb_local_version_referencia": "3.3.1",
+  "imagen_docker_digest_referencia": "sha256:ff89bd48ff32cd8d9be5fee8873b65b8854dc408f1afe881be6eb00247bc0dab",
+  "endpoint": "http://127.0.0.1:18000",
+  "tabla_temporal": "Outspark-test-0d28b42d4e954e0f9c1ef863a62ad12e",
+  "comprobaciones": 33,
+  "resultado": "PASS",
+  "limites": [
+    "No valida Cognito, Lambda, permisos IAM ni despliegue AWS.",
+    "No mide precios, propagación temporal de GSI ni rendimiento de producción.",
+    "Sin prueba de carga o carrera simultánea entre procesos; se prueba retiro antes del commit."
+  ],
+  "casos": [
+    {
+      "caso": "Publicar crea original, raíz y bloqueo de autor atómicos",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Reintento de publicación devuelve el mismo resultado",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Idempotencia rechaza una misma clave con otro contenido",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Publicar sin pertenencia no escribe",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Publicar con tema inexistente no escribe",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Bloqueo de autor impide republicar su propio original",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Republicación deriva el original del padre",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Segunda republicación del mismo actor/original falla",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Reintento de republicación no añade eventos",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "La clave de idempotencia distingue operaciones",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Padre inexistente se rechaza",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Referencias mal formadas se rechazan",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Las dos llegadas conservan rutas Ana→Bruno y Ana→Bruno→Carla",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Lectura defensiva detecta ciclos",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Lectura defensiva detecta padres ausentes",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Lectura defensiva detecta cruce de originales",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Snapshot agrupa un original con dos fuentes y sus razones",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Snapshot de otro destinatario no es consultable",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Un snapshot cerrado no se sobrescribe",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Un original no aparece dos veces en el snapshot",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "La razón de contacto debe corresponder al evento",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Una fuente no se duplica por tener varios motivos",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Feed vacío válido se puede guardar",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Retirar amistad actualiza el par y ambos espejos",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Contacto retirado impide confirmar el snapshot preparado",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Fallo de condición revierte snapshot y puntero completos",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Snapshot previo conserva explicación histórica tras retirar contacto",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Original retirado bloquea nuevas republicaciones",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Retiro conserva la cadena histórica",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Dos acciones al mismo ítem no forman transacción válida",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "Más de cien acciones se rechazan antes de llamar AWS",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "GSI de actor recupera evento sin duplicar cuerpo",
+      "resultado": "PASS"
+    },
+    {
+      "caso": "GSI no admite lectura fuertemente consistente",
+      "resultado": "PASS"
+    }
+  ]
+}

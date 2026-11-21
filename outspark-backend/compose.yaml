@@ -1,0 +1,15 @@
+name: outspark-backend-local
+services:
+  dynamodb:
+    image: amazon/dynamodb-local@sha256:ff89bd48ff32cd8d9be5fee8873b65b8854dc408f1afe881be6eb00247bc0dab
+    user: root
+    environment:
+      JAVA_TOOL_OPTIONS: "-Xms256m -Xmx3g"
+    mem_limit: 4g
+    command: -jar DynamoDBLocal.jar -sharedDb -dbPath /data
+    ports:
+      - "127.0.0.1:18000:8000"
+    volumes:
+      - outspark-data:/data
+volumes:
+  outspark-data:

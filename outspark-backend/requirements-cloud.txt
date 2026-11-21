@@ -1,0 +1,4 @@
+-r requirements.txt
+CacheControl==0.15.0
+google-auth[requests]==2.63.0
+requests==2.34.2

@@ -1,0 +1,7 @@
+# Runtime dependencies are also declared in pyproject.toml for packaging.
+boto3==1.42.97
+fastapi==0.143.0
+mangum==0.22.0
+psycopg[binary]==3.3.9
+psycopg-pool==3.3.3
+uvicorn==0.54.0
