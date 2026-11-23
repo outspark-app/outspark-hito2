@@ -1,6 +1,6 @@
 # Outspark · base de trabajo del Hito 2
 
-Aplicación universitaria de Complejidad Algorítmica (1ACC0184, UPC, 2026-20). Esta copia reúne el código del simulador y los componentes que necesita Kamil. La versión validada en [Firebase Hosting](https://outspark-universidad.web.app/app/) corresponde a la iteración anterior al rediseño. Las capturas finales se hicieron con el frontend de esta copia en una compilación local conectada a la API publicada. Para repetir el flujo con la misma interfaz, ejecuta este código con PostgreSQL local e importa el dataset completo.
+La versión validada en [Firebase Hosting](https://outspark-universidad.web.app/app/) corresponde a la iteración anterior al rediseño. Las capturas finales se hicieron con el frontend de esta copia en una compilación local conectada a la API publicada. Para repetir el flujo con la misma interfaz, ejecuta este código con PostgreSQL local e importa el dataset completo.
 
 ## Componentes
 
